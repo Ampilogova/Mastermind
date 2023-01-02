@@ -23,7 +23,7 @@ private class MastermindTests: XCTestCase {
         
         let numberGeneratorService = NumberGeneratorServiceImpl(networkService: fakeNetworkService)
         var randomNumbers = [String]()
-        numberGeneratorService.generateNumbers(count: "4") { result in
+        numberGeneratorService.generateNumbers(count: 4) { result in
             switch result {
             case .success(let numbers):
                 randomNumbers = numbers
@@ -41,7 +41,7 @@ private class MastermindTests: XCTestCase {
         
         let numberGeneratorService = NumberGeneratorServiceImpl(networkService: fakeNetworkService)
         var error: Error? = nil
-        numberGeneratorService.generateNumbers(count: "4") { result in
+        numberGeneratorService.generateNumbers(count: 4) { result in
             switch result {
             case .failure(let  resultError):
                 error = resultError

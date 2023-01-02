@@ -11,7 +11,7 @@ import Foundation
 class NumberGeneratorServiceFake: NumberGeneratorService {
     var numbers = [String]()
     
-    func generateNumbers(count: String, completion: @escaping (Result<[String], Error>) -> Void) {
+    func generateNumbers(count: Int, completion: @escaping (Result<[String], Error>) -> Void) {
         completion(.success(numbers))
     }
 }
