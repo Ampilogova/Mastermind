@@ -178,7 +178,7 @@ class GameViewController: UIViewController,  UICollectionViewDelegate, UICollect
             let state = game.verifyCandidate()
             if state == .win || state == .lose {
                 answerViewController.showAnswer()
-                self.showRestartAlert(title: state.title, message: "Do you want to reset the game and start over?", handler: {
+                self.showRestartAlert(title: state.title, message: "Try again", handler: {
                     self.startGame()
                 })
             }
@@ -215,9 +215,7 @@ class GameViewController: UIViewController,  UICollectionViewDelegate, UICollect
     //MARK: - Alert
     private func showRestartAlert(title: String, message: String, handler: (() -> Void)?) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        alertController.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
-            
-        }))
+        
         alertController.addAction(UIAlertAction(title: "Restart", style: .default, handler: { (action) in
             handler?()
         }))
